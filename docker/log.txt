@@ -1,0 +1,127 @@
+Sending build context to Docker daemon  4.608kB
+Step 1/7 : FROM continuumio/miniconda3:latest
+ ---> ce7d119281a1
+Step 2/7 : RUN mkdir -p /app
+ ---> Using cache
+ ---> e847d3597ced
+Step 3/7 : WORKDIR /app
+ ---> Using cache
+ ---> f9bfa00f7d4e
+Step 4/7 : COPY . /app
+ ---> 4a9a76ccaec4
+Step 5/7 : RUN pip install -r requirements.txt
+ ---> Running in 51f46281e1b5
+Collecting mlflow
+  Downloading mlflow-1.26.1-py3-none-any.whl (17.8 MB)
+Collecting PyMySQL
+  Downloading PyMySQL-1.0.2-py3-none-any.whl (43 kB)
+Collecting boto3
+  Downloading boto3-1.24.18-py3-none-any.whl (132 kB)
+Collecting entrypoints
+  Downloading entrypoints-0.4-py3-none-any.whl (5.3 kB)
+Collecting pyyaml>=5.1
+  Downloading PyYAML-6.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (661 kB)
+Collecting pandas
+  Downloading pandas-1.4.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.7 MB)
+Collecting gunicorn
+  Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
+Collecting databricks-cli>=0.8.7
+  Downloading databricks-cli-0.17.0.tar.gz (81 kB)
+Collecting packaging
+  Downloading packaging-21.3-py3-none-any.whl (40 kB)
+Collecting click>=7.0
+  Downloading click-8.1.3-py3-none-any.whl (96 kB)
+Collecting docker>=4.0.0
+  Downloading docker-5.0.3-py2.py3-none-any.whl (146 kB)
+Collecting gitpython>=2.1.0
+  Downloading GitPython-3.1.27-py3-none-any.whl (181 kB)
+Collecting protobuf>=3.12.0
+  Downloading protobuf-4.21.2-cp37-abi3-manylinux2014_x86_64.whl (407 kB)
+Collecting sqlparse>=0.3.1
+  Downloading sqlparse-0.4.2-py3-none-any.whl (42 kB)
+Collecting Flask
+  Downloading Flask-2.1.2-py3-none-any.whl (95 kB)
+Collecting numpy
+  Downloading numpy-1.23.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.1 MB)
+Collecting scipy
+  Downloading scipy-1.8.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (42.2 MB)
+Collecting cloudpickle
+  Downloading cloudpickle-2.1.0-py3-none-any.whl (25 kB)
+Collecting pytz
+  Downloading pytz-2022.1-py2.py3-none-any.whl (503 kB)
+Collecting alembic
+  Downloading alembic-1.8.0-py3-none-any.whl (209 kB)
+Collecting sqlalchemy
+  Downloading SQLAlchemy-1.4.39-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.6 MB)
+Collecting prometheus-flask-exporter
+  Downloading prometheus_flask_exporter-0.20.2-py3-none-any.whl (18 kB)
+Requirement already satisfied: requests>=2.17.3 in /opt/conda/lib/python3.9/site-packages (from mlflow->-r requirements.txt (line 1)) (2.27.1)
+Collecting importlib-metadata!=4.7.0,>=3.7.0
+  Downloading importlib_metadata-4.12.0-py3-none-any.whl (21 kB)
+Collecting querystring-parser
+  Downloading querystring_parser-1.2.4-py2.py3-none-any.whl (7.9 kB)
+Collecting s3transfer<0.7.0,>=0.6.0
+  Downloading s3transfer-0.6.0-py3-none-any.whl (79 kB)
+Collecting jmespath<2.0.0,>=0.7.1
+  Downloading jmespath-1.0.1-py3-none-any.whl (20 kB)
+Collecting botocore<1.28.0,>=1.27.18
+  Downloading botocore-1.27.18-py3-none-any.whl (8.9 MB)
+Requirement already satisfied: urllib3<1.27,>=1.25.4 in /opt/conda/lib/python3.9/site-packages (from botocore<1.28.0,>=1.27.18->boto3->-r requirements.txt (line 3)) (1.26.8)
+Collecting python-dateutil<3.0.0,>=2.1
+  Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+Collecting pyjwt>=1.7.0
+  Downloading PyJWT-2.4.0-py3-none-any.whl (18 kB)
+Collecting oauthlib>=3.1.0
+  Downloading oauthlib-3.2.0-py3-none-any.whl (151 kB)
+Collecting tabulate>=0.7.7
+  Downloading tabulate-0.8.10-py3-none-any.whl (29 kB)
+Requirement already satisfied: six>=1.10.0 in /opt/conda/lib/python3.9/site-packages (from databricks-cli>=0.8.7->mlflow->-r requirements.txt (line 1)) (1.16.0)
+Collecting websocket-client>=0.32.0
+  Downloading websocket_client-1.3.3-py3-none-any.whl (54 kB)
+Collecting gitdb<5,>=4.0.1
+  Downloading gitdb-4.0.9-py3-none-any.whl (63 kB)
+Collecting smmap<6,>=3.0.1
+  Downloading smmap-5.0.0-py3-none-any.whl (24 kB)
+Collecting zipp>=0.5
+  Downloading zipp-3.8.0-py3-none-any.whl (5.4 kB)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/conda/lib/python3.9/site-packages (from requests>=2.17.3->mlflow->-r requirements.txt (line 1)) (2021.10.8)
+Requirement already satisfied: idna<4,>=2.5 in /opt/conda/lib/python3.9/site-packages (from requests>=2.17.3->mlflow->-r requirements.txt (line 1)) (3.3)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /opt/conda/lib/python3.9/site-packages (from requests>=2.17.3->mlflow->-r requirements.txt (line 1)) (2.0.4)
+Collecting Mako
+  Downloading Mako-1.2.0-py3-none-any.whl (78 kB)
+Collecting greenlet!=0.4.17
+  Downloading greenlet-1.1.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (153 kB)
+Collecting Werkzeug>=2.0
+  Downloading Werkzeug-2.1.2-py3-none-any.whl (224 kB)
+Collecting Jinja2>=3.0
+  Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+Collecting itsdangerous>=2.0
+  Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+Collecting MarkupSafe>=2.0
+  Downloading MarkupSafe-2.1.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+Requirement already satisfied: setuptools>=3.0 in /opt/conda/lib/python3.9/site-packages (from gunicorn->mlflow->-r requirements.txt (line 1)) (61.2.0)
+Collecting pyparsing!=3.0.5,>=2.0.2
+  Downloading pyparsing-3.0.9-py3-none-any.whl (98 kB)
+Collecting prometheus-client
+  Downloading prometheus_client-0.14.1-py3-none-any.whl (59 kB)
+Building wheels for collected packages: databricks-cli
+  Building wheel for databricks-cli (setup.py): started
+  Building wheel for databricks-cli (setup.py): finished with status 'done'
+  Created wheel for databricks-cli: filename=databricks_cli-0.17.0-py3-none-any.whl size=141954 sha256=c91720d8829add9e15a0b481e0bccbdd81d0df97133384bc35a9774b65f04cb6
+  Stored in directory: /root/.cache/pip/wheels/d5/b6/71/c3052c82e4a88dc658dd2616b944e130c1d0ff3f77e8f02df7
+Successfully built databricks-cli
+Installing collected packages: zipp, MarkupSafe, Werkzeug, smmap, python-dateutil, jmespath, Jinja2, itsdangerous, importlib-metadata, greenlet, click, websocket-client, tabulate, sqlalchemy, pytz, pyparsing, pyjwt, prometheus-client, oauthlib, numpy, Mako, gitdb, Flask, botocore, sqlparse, scipy, s3transfer, querystring-parser, pyyaml, protobuf, prometheus-flask-exporter, pandas, packaging, gunicorn, gitpython, entrypoints, docker, databricks-cli, cloudpickle, alembic, PyMySQL, mlflow, boto3
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mSuccessfully installed Flask-2.1.2 Jinja2-3.1.2 Mako-1.2.0 MarkupSafe-2.1.1 PyMySQL-1.0.2 Werkzeug-2.1.2 alembic-1.8.0 boto3-1.24.18 botocore-1.27.18 click-8.1.3 cloudpickle-2.1.0 databricks-cli-0.17.0 docker-5.0.3 entrypoints-0.4 gitdb-4.0.9 gitpython-3.1.27 greenlet-1.1.2 gunicorn-20.1.0 importlib-metadata-4.12.0 itsdangerous-2.1.2 jmespath-1.0.1 mlflow-1.26.1 numpy-1.23.0 oauthlib-3.2.0 packaging-21.3 pandas-1.4.3 prometheus-client-0.14.1 prometheus-flask-exporter-0.20.2 protobuf-4.21.2 pyjwt-2.4.0 pyparsing-3.0.9 python-dateutil-2.8.2 pytz-2022.1 pyyaml-6.0 querystring-parser-1.2.4 s3transfer-0.6.0 scipy-1.8.1 smmap-5.0.0 sqlalchemy-1.4.39 sqlparse-0.4.2 tabulate-0.8.10 websocket-client-1.3.3 zipp-3.8.0
+Removing intermediate container 51f46281e1b5
+ ---> d1debd5c427a
+Step 6/7 : RUN chmod +x 1.sh
+ ---> Running in 3d738410723c
+Removing intermediate container 3d738410723c
+ ---> dab12522f73e
+Step 7/7 : ENTRYPOINT /app/1.sh; /bin/bash
+ ---> Running in 859444405eb7
+Removing intermediate container 859444405eb7
+ ---> a001b77a845d
+Successfully built a001b77a845d
+Successfully tagged netology-ml:netology-ml
